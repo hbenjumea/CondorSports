@@ -10,9 +10,11 @@ class TeamViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val binding = ItemTeamBinding.bind(view)
 
-    fun bind(team: Team){
+    fun bind(team: Team, onClickListener:(Team) -> Unit){
         binding.tvName.text = team.strTeam
         binding.tvStadium.text = team.strStadium
         Picasso.get().load(team.strTeamBadge).into(binding.ivBadge)
+
+        itemView.setOnClickListener {onClickListener(team)}
     }
 }

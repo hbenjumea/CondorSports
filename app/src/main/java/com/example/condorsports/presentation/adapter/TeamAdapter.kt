@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.condorsports.R
 import com.example.condorsports.data.Team
 
-class TeamAdapter(val teams: List<Team>): RecyclerView.Adapter<TeamViewHolder>() {
+class TeamAdapter(private val teams: List<Team>, private val onClickListener:(Team) -> Unit): RecyclerView.Adapter<TeamViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -15,7 +15,7 @@ class TeamAdapter(val teams: List<Team>): RecyclerView.Adapter<TeamViewHolder>()
 
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
         val team = teams[position]
-        holder.bind(team)
+        holder.bind(team, onClickListener)
     }
 
     override fun getItemCount(): Int = teams.size

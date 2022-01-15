@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="20dp">
 
     <LinearLayout
@@ -18,7 +19,7 @@
             android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            tools:text="@string/name"
             android:layout_weight="1"
             android:textAlignment="center"
             android:layout_gravity="center"/>
@@ -26,7 +27,7 @@
             android:id="@+id/tvStadium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/stadium"
+            tools:text="@string/stadium"
             android:layout_weight="1"
             android:textAlignment="center"
             android:layout_gravity="center"/>
