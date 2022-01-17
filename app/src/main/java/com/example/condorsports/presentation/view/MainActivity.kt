@@ -1,8 +1,10 @@
-package com.example.condorsports.presentation
+package com.example.condorsports.presentation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.example.condorsports.databinding.ActivityMainBinding
+import com.example.condorsports.presentation.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,9 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val mainFragment = MainFragment.newInstance()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(binding.flBody.id,mainFragment).commit()
     }
+
+
 }

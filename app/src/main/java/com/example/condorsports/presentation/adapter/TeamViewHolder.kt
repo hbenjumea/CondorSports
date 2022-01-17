@@ -2,7 +2,7 @@ package com.example.condorsports.presentation.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.example.condorsports.data.Team
+import com.example.condorsports.data.model.Team
 import com.example.condorsports.databinding.ItemTeamBinding
 import com.squareup.picasso.Picasso
 

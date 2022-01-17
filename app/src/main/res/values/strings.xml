@@ -3,4 +3,9 @@
     <string name="name">Name</string>
     <string name="stadium">Stadium</string>
     <string name="team_badge">Team badge</string>
+    <string name="team_jersey">Team jersey</string>
+    <string name="team_foundation_year">Team foundation year:</string>
+    <string name="next_events">Next events</string>
+    <string name="links">Links …</string>
+    <string name="back">Back</string>
 </resources>

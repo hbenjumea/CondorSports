@@ -1,4 +1,4 @@
-package com.example.condorsports.data
+package com.example.condorsports.data.model
 
 import com.google.gson.annotations.SerializedName
 

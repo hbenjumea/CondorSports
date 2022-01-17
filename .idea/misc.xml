@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Hugo/AndroidStudioProjects/CondorSports/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/Hugo/AndroidStudioProjects/CondorSports/app/src/main/res/layout/detail_fragment.xml" value="0.23278985507246377" />
+        <entry key="..\:/Users/Hugo/AndroidStudioProjects/CondorSports/app/src/main/res/layout/item_event.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Hugo/AndroidStudioProjects/CondorSports/app/src/main/res/layout/item_link.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Hugo/AndroidStudioProjects/CondorSports/app/src/main/res/layout/item_team.xml" value="0.23278985507246377" />
         <entry key="..\:/Users/Hugo/AndroidStudioProjects/CondorSports/app/src/main/res/layout/main_fragment.xml" value="0.23278985507246377" />
       </map>

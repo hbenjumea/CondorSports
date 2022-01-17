@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condorsports.R
-import com.example.condorsports.data.Team
+import com.example.condorsports.data.model.Team
 
-class TeamAdapter(private val teams: List<Team>, private val onClickListener:(Team) -> Unit): RecyclerView.Adapter<TeamViewHolder>() {
+class TeamAdapter(private val teams: List<Team>, private val onClickListener:(Team) -> Unit)
+    : RecyclerView.Adapter<TeamViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
