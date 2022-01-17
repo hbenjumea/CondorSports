@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.condorsports.R
 import com.example.condorsports.data.model.Event
 
+/**
+ * Adapter for the next 5 events
+ */
 class EventAdapter(private val events: List<Event>): RecyclerView.Adapter<EventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {

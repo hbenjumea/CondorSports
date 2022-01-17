@@ -2,7 +2,6 @@ package com.example.condorsports.presentation.view
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +15,9 @@ import com.example.condorsports.databinding.MainFragmentBinding
 import com.example.condorsports.presentation.adapter.TeamAdapter
 import com.example.condorsports.presentation.viewmodel.MainViewModel
 
+/**
+ * Fragment for the teams
+ */
 class MainFragment : Fragment() {
 
     private lateinit var binding: MainFragmentBinding
@@ -35,9 +37,12 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
+
+        //Get the teams
         viewModel.onCreate("Spanish%20La%20Liga")
+
+        //When get the teams then update the list
         viewModel.teams.observe(requireActivity(),{
-            Log.e("hugo", "hjhgfjhgfj")
             if (it.isNotEmpty()) {
                 teams.clear()
                 teams.addAll(it)
@@ -46,6 +51,7 @@ class MainFragment : Fragment() {
                 showError()
             }
         })
+
         initRecyclerView()
     }
 
@@ -57,8 +63,10 @@ class MainFragment : Fragment() {
         binding.rvTeams.adapter = teamAdapter
     }
 
+    /**
+     * When touch a team then navigate to detail
+     */
     private fun onItemSelected(team: Team){
-        //Toast.makeText(requireContext(),"Team: ${team.strTeam}", Toast.LENGTH_SHORT).show()
         viewModel.selectItem(team)
         findNavController().navigate(R.id.action_mainFragment_to_detailFragment)
     }

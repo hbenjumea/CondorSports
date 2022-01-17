@@ -6,6 +6,9 @@ import com.example.condorsports.data.model.Team
 import com.example.condorsports.databinding.ItemTeamBinding
 import com.squareup.picasso.Picasso
 
+/**
+ * Viewholder for the teams
+ */
 class TeamViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val binding = ItemTeamBinding.bind(view)

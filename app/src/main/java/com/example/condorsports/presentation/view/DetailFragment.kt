@@ -19,14 +19,19 @@ import com.example.condorsports.presentation.viewmodel.MainViewModel
 import com.squareup.picasso.Picasso
 import java.lang.Exception
 
+/**
+ * Fragment for the team detail
+ */
 class DetailFragment : Fragment() {
 
     private lateinit var binding: DetailFragmentBinding
     private lateinit var viewModel: MainViewModel
 
+    //For the next 5 events
     private lateinit var eventAdapter: EventAdapter
     private val events = mutableListOf<Event>()
 
+    //URL Links to social networks
     private lateinit var linkAdapter: LinkAdapter
     private val links = mutableListOf<String>()
 
@@ -60,6 +65,7 @@ class DetailFragment : Fragment() {
         }
     }
 
+    //// Methods for the next 5 events/////////
     private fun initEventRecyclerView() {
         eventAdapter = EventAdapter(events)
         binding.rvEvents.layoutManager = LinearLayoutManager(requireContext())
@@ -92,6 +98,7 @@ class DetailFragment : Fragment() {
         eventAdapter.notifyDataSetChanged()
     }
 
+    //// Methods for the social networks links/////////
     private fun initLinkRecyclerView() {
         linkAdapter = LinkAdapter(links){
             onItemSelected(it)
@@ -100,13 +107,6 @@ class DetailFragment : Fragment() {
         binding.rvLinks.adapter = linkAdapter
     }
 
-    /**
-     * strWebsite
-    facebook
-    twitter
-    instagram
-    youtube
-     */
     private fun loadLinkRecyclerView(team: Team) {
         links.clear()
 
@@ -129,6 +129,9 @@ class DetailFragment : Fragment() {
         linkAdapter.notifyDataSetChanged()
     }
 
+    /**
+     * Open URL social networks when touch
+     */
     private fun onItemSelected(link: String){
         //Open url
         try {

@@ -2,6 +2,9 @@ package com.example.condorsports.data.model
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Data class to map the response from API
+ */
 data class Team(
     @SerializedName("idTeam"                ) var idTeam                : String? = null,
     @SerializedName("idSoccerXML"           ) var idSoccerXML           : String? = null,

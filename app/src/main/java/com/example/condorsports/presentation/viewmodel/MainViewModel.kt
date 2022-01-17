@@ -17,9 +17,6 @@ class MainViewModel : ViewModel() {
     private val mutableSelectedTeam = MutableLiveData<Team>()
     val selectedTeam: LiveData<Team> get() = mutableSelectedTeam
 
-    /*private val mutableSelectedLink = MutableLiveData<String>()
-    val selectedLink: LiveData<String> get() = mutableSelectedLink*/
-
     var getTeamsUseCase = GetTeamsUseCase()
 
     fun onCreate(league: String) {
@@ -36,9 +33,5 @@ class MainViewModel : ViewModel() {
     fun selectItem(team: Team) {
         mutableSelectedTeam.value = team
     }
-
-    /*fun selectItemLink(link: String) {
-        mutableSelectedLink.value = link
-    }*/
-
+    
 }

@@ -5,6 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.condorsports.R
 
+/**
+ * Adapter for the team links (Facebook, Twitter, Youtube)
+ */
 class LinkAdapter(private val links: List<String>, private val onClickListener:(String) -> Unit)
     : RecyclerView.Adapter<LinkViewHolder>() {
 

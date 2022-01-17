@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.condorsports.R
 import com.example.condorsports.data.model.Team
 
+/**
+ * Adapter for the teams
+ */
 class TeamAdapter(private val teams: List<Team>, private val onClickListener:(Team) -> Unit)
     : RecyclerView.Adapter<TeamViewHolder>() {
 
