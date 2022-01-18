@@ -16,13 +16,17 @@ class MainViewModel : ViewModel() {
     private val mutableSelectedTeam = MutableLiveData<Team>()
     val selectedTeam: LiveData<Team> get() = mutableSelectedTeam
 
+    val isLoading = MutableLiveData<Boolean>()
+
     var getTeamsUseCase = GetTeamsUseCase()
 
     fun onCreate(league: String) {
         viewModelScope.launch {
+            isLoading.postValue(true)
             val result = getTeamsUseCase(league)
             if(!result.isNullOrEmpty()){
                 mutableTeams.value = result
+                isLoading.postValue(false)
             }
         }
     }

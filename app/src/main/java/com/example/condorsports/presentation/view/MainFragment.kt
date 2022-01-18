@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.condorsports.R
@@ -62,6 +63,10 @@ class MainFragment : Fragment(), AdapterView.OnItemSelectedListener {
             }else{
                 showError()
             }
+        })
+
+        viewModel.isLoading.observe(requireActivity(),{
+            binding.loading.isVisible = it
         })
 
         initRecyclerView()
