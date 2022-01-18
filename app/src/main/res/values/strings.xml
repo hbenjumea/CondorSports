@@ -8,4 +8,10 @@
     <string name="next_events">Next events</string>
     <string name="links">Links …</string>
     <string name="back">Back</string>
+
+    <string-array name="leaguess_array">
+        <item>Spanish_La_Liga</item>
+        <item>English_Premier_League</item>
+        <item>English_League_Championship</item>
+    </string-array>
 </resources>

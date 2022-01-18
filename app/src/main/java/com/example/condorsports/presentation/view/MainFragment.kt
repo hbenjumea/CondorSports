@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +20,7 @@ import com.example.condorsports.presentation.viewmodel.MainViewModel
 /**
  * Fragment for the teams
  */
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private lateinit var binding: MainFragmentBinding
     private lateinit var viewModel: MainViewModel
@@ -37,6 +39,16 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
+
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.leaguess_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            binding.leaguesSpinner.adapter = adapter
+        }
+        binding.leaguesSpinner.onItemSelectedListener = this
 
         //Get the teams
         viewModel.onCreate("Spanish%20La%20Liga")
@@ -73,6 +85,15 @@ class MainFragment : Fragment() {
 
     private fun showError() {
         Toast.makeText(requireContext(),"An error has occurred",Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        val item = parent?.selectedItem.toString()
+        viewModel.onCreate(item)
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        TODO("Not yet implemented")
     }
 
 }

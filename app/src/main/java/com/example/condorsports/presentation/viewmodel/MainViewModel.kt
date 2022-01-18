@@ -1,6 +1,5 @@
 package com.example.condorsports.presentation.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,9 +21,7 @@ class MainViewModel : ViewModel() {
     fun onCreate(league: String) {
         viewModelScope.launch {
             val result = getTeamsUseCase(league)
-
             if(!result.isNullOrEmpty()){
-                Log.e("hugo","onCreate isNullOrEmpty false")
                 mutableTeams.value = result
             }
         }
