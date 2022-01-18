@@ -1,10 +1,9 @@
 package com.example.condorsports.presentation.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
+import androidx.appcompat.app.AppCompatActivity
+import com.example.condorsports.R
 import com.example.condorsports.databinding.ActivityMainBinding
-import com.example.condorsports.presentation.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setTheme(R.style.Theme_CondorSports)
         setContentView(binding.root)
     }
 
